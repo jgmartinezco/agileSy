@@ -1,0 +1,16 @@
+{
+    "userName": "sa",
+    "password": "Rosangela1",
+    "server": "localhost",
+    "authentication": {
+        "type": "default",
+        "options": {
+            "userName": "sa",
+            "password": "Rosangela1"
+        }
+    },
+    "options": {
+        "encrypt": false,
+        "database": "AgileDB"
+    }
+}

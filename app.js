@@ -1,5 +1,8 @@
-const express = require('express')
+'use strict'
+
+const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
-var port = process.env.PORT || 3000;
-app.get('/', (req, res) => res.send('hello jgmc'));
-app.listen(port, () => console.log('server is running'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+module.exports = app;
