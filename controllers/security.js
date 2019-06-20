@@ -29,12 +29,14 @@ module.exports.login = function (request, response, next) {
                     var lToken = jwt.sign(lTokenData, config.jwt.secret, {
                         expiresIn: 60 * 60 * 24 // expires in 24 hours
                     });
+                    sql.close();
                     response.send({ lToken });
                 }
                 else {
+                    sql.close();
                     response.status(401).send({ error: "credenciales inválidas" });
                 }
-                sql.close();
+
             });
         }
     });
