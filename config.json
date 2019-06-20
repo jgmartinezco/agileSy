@@ -1,16 +1,13 @@
 {
-    "userName": "sa",
-    "password": "Rosangela1",
-    "server": "localhost",
-    "authentication": {
-        "type": "default",
-        "options": {
-            "userName": "sa",
-            "password": "Rosangela1"
-        }
+    "DataBase": {
+        "user": "admin_jgmc",
+        "password": "Telefonica123",
+        "server": "bdjgmc.database.windows.net",
+        "database": "AgileDB",
+        "encrypt": true
     },
-    "options": {
-        "encrypt": false,
-        "database": "AgileDB"
+    "jwt": {
+        "secret": "**Prueba de Frase**",
+        "enabled": false
     }
 }
