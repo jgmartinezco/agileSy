@@ -34,6 +34,7 @@ module.exports.login = function (request, response, next) {
                 else {
                     response.status(401).send({ error: "credenciales inválidas" });
                 }
+                sql.close();
             });
         }
     });
