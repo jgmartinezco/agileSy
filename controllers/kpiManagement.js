@@ -6,8 +6,8 @@ var sql = require('mssql');
 
 module.exports.getKPIList = function (request, response, next) {
 
-    var lIdTeam = request.params.team;
-    console.log("obtener métricas a gestionar el equipo: " + lIdTeam);
+    var lTeamId = request.params.TeamId;
+    console.log("obtener métricas a gestionar el equipo: " + lTeamId);
 
 
     sql.connect(config.DataBase, function (err) {
@@ -17,17 +17,21 @@ module.exports.getKPIList = function (request, response, next) {
         }
         else {
             var lQuery = new sql.Request();
-            lQuery.input("CodEquipo", sql.SmallInt, lIdTeam);
+            lQuery.input("CodEquipo", sql.SmallInt, lTeamId);
             lQuery.execute("traerMetricasAGestionar", (err, result) => {
                 console.log(err);
                 if (result && result.recordset) {
-
+                    response.send({ result: result.recordset });
                 }
+                else {
+                    response.status(404).send({ error: "No existen métricas para el equipo" });
+                }
+                sql.close();
             });
         }
     });
 
-    response.send("Se finalizó el método getKPIList");
+
 }
 
 module.exports.registerMetrics = function (request, response, next) {
