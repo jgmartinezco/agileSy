@@ -1,7 +1,7 @@
 'use strict'
 
 const express = require('express');
-var config = require('./config.json');
+var config = require('./config');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const app = express();

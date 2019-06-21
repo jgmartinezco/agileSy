@@ -1,6 +1,6 @@
 'use strict'
 
-var config = require('../config.json');
+var config = require('../config');
 var sql = require('mssql');
 
 
@@ -30,8 +30,6 @@ module.exports.getKPIList = function (request, response, next) {
             });
         }
     });
-
-
 }
 
 module.exports.registerMetrics = function (request, response, next) {

@@ -1,8 +1,8 @@
 {
     "DataBase": {
-        "user": "admin_jgmc",
-        "password": "Telefonica123",
-        "server": "bdjgmc.database.windows.net",
+        "user": "sa",
+        "password": "Rosangela1",
+        "server": "localhost",
         "database": "AgileDB",
         "encrypt": true
     },

@@ -1,6 +1,6 @@
 'use strict'
 
-var config = require('../config.json');
+var config = require('../config');
 var jwt = require('jsonwebtoken');
 var sql = require('mssql');
 
@@ -15,7 +15,7 @@ module.exports.login = function (request, response, next) {
     sql.connect(config.DataBase, function (err) {
         if (err) {
             console.log(err);
-            response.send("Error al procesar la petición");
+            response.status(500).send({ error: "error al conectarse" });
         }
         else {
             var lQuery = new sql.Request();
